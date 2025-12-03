@@ -1,0 +1,35 @@
+ALGORITHM SentenceWithTable
+VAR
+    Array : float[];
+    i , j : INTEGER
+    charCount, wordCount, vowelCount : INTEGER
+BEGIN
+    charCount := 0
+    wordCount := 0
+    vowelCount := 0
+    i := 0
+
+    Write("Enter your sentence :")
+    WHILE T[i] <> '.' DO
+    READ(T[i])
+    i := i + 1
+    END_WHILE
+    i++
+
+    j := 0
+    FOR j FROM 0 TO i-1 STEP 1  DO
+        charCount := charCount + 1
+
+        IF Array[j] = ' ' THEN
+            wordCount := wordCount + 1
+        END_IF
+
+        IF Array[j] = 'a' OR Array[j] = 'e' OR Array[j] = 'i' OR Array[j] = 'o' OR Array[j] = 'u' THEN
+            vowelCount := vowelCount + 1
+        END_IF
+    END_FOR
+
+    WRITE("Length = ", charCount)
+    WRITE("Words = ", wordCount)
+    WRITE("Vowels = ", vowelCount)
+END
